@@ -1,0 +1,25 @@
+{
+  "name": "queryon-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build --parallel",
+    "dev": "turbo run dev --parallel",
+    "dev:admin": "turbo run dev --filter=admin",
+    "dev:widget": "turbo run dev --filter=widget",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "publish": "changesets publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "changesets": "^1.0.2",
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@8.12.0"
+}

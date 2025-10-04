@@ -1,0 +1,42 @@
+{
+  "name": "@queryon/config",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./eslint": {
+      "import": "./dist/eslint.mjs",
+      "require": "./dist/eslint.js",
+      "types": "./dist/eslint.d.ts"
+    },
+    "./prettier": {
+      "import": "./dist/prettier.mjs",
+      "require": "./dist/prettier.js",
+      "types": "./dist/prettier.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "eslint": "^8.57.1"
+  },
+  "publishConfig": {
+    "@queryon:registry": "https://npm.pkg.github.com"
+  }
+}

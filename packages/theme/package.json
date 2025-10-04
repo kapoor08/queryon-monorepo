@@ -1,0 +1,52 @@
+{
+  "name": "@queryon/theme",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./colors": {
+      "import": "./dist/colors.mjs",
+      "require": "./dist/colors.js",
+      "types": "./dist/colors.d.ts"
+    },
+    "./typography": {
+      "import": "./dist/typography.mjs",
+      "require": "./dist/typography.js",
+      "types": "./dist/typography.d.ts"
+    },
+    "./themes": {
+      "import": "./dist/themes.mjs",
+      "require": "./dist/themes.js",
+      "types": "./dist/themes.d.ts"
+    },
+    "./tailwind": {
+      "import": "./dist/tailwind.config.mjs",
+      "require": "./dist/tailwind.config.js",
+      "types": "./dist/tailwind.config.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "eslint": "^8.57.1"
+  },
+  "publishConfig": {
+    "@queryon:registry": "https://npm.pkg.github.com"
+  }
+}
