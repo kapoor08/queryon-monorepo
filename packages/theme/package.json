@@ -6,29 +6,29 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./colors": {
+      "types": "./dist/colors.d.ts",
       "import": "./dist/colors.mjs",
-      "require": "./dist/colors.js",
-      "types": "./dist/colors.d.ts"
+      "require": "./dist/colors.js"
     },
     "./typography": {
+      "types": "./dist/typography.d.ts",
       "import": "./dist/typography.mjs",
-      "require": "./dist/typography.js",
-      "types": "./dist/typography.d.ts"
+      "require": "./dist/typography.js"
     },
     "./themes": {
+      "types": "./dist/themes.d.ts",
       "import": "./dist/themes.mjs",
-      "require": "./dist/themes.js",
-      "types": "./dist/themes.d.ts"
+      "require": "./dist/themes.js"
     },
     "./tailwind": {
+      "types": "./dist/tailwind.config.d.ts",
       "import": "./dist/tailwind.config.mjs",
-      "require": "./dist/tailwind.config.js",
-      "types": "./dist/tailwind.config.d.ts"
+      "require": "./dist/tailwind.config.js"
     }
   },
   "files": [

@@ -9,21 +9,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./button": {
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js",
-      "types": "./dist/button.d.ts"
-    },
-    "./input": {
-      "import": "./dist/input.mjs",
-      "require": "./dist/input.js",
-      "types": "./dist/input.d.ts"
-    },
-    "./card": {
-      "import": "./dist/card.mjs",
-      "require": "./dist/card.js",
-      "types": "./dist/card.d.ts"
     }
   },
   "files": [
@@ -33,10 +18,11 @@
   ],
   "scripts": {
     "build": "pnpm build:css && pnpm build:js",
-    "build:js": "tsup",
+    "build:js": "tsup src/index.ts --format cjs,esm --dts --clean",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
-    "dev": "tsup --watch",
-    "clean": "rm -rf dist"
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rm -rf dist",
+    "update-browserslist": "npx update-browserslist-db@latest"
   },
   "peerDependencies": {
     "react": "^18.0.0",
