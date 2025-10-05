@@ -34,7 +34,8 @@
     "eslint": "^8.57.1"
   },
   "publishConfig": {
-    "@queryon:registry": "https://npm.pkg.github.com"
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",

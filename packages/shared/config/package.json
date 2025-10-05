@@ -6,19 +6,19 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./eslint": {
+      "types": "./dist/eslint.d.ts",
       "import": "./dist/eslint.mjs",
-      "require": "./dist/eslint.js",
-      "types": "./dist/eslint.d.ts"
+      "require": "./dist/eslint.js"
     },
     "./prettier": {
+      "types": "./dist/prettier.d.ts",
       "import": "./dist/prettier.mjs",
-      "require": "./dist/prettier.js",
-      "types": "./dist/prettier.d.ts"
+      "require": "./dist/prettier.js"
     }
   },
   "files": [
@@ -40,7 +40,8 @@
     "typescript": "^5.9.3"
   },
   "publishConfig": {
-    "@queryon:registry": "https://npm.pkg.github.com"
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",

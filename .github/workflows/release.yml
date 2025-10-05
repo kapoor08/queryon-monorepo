@@ -5,10 +5,9 @@ on:
     branches:
       - main
 
-# Add workflow-level permissions
 permissions:
-  contents: write # Allows pushing to branches
-  pull-requests: write # Allows creating and updating PRs
+  contents: write
+  pull-requests: write
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -23,12 +22,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Upgrade to Node.js 20 for compatibility
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3 # Update to v3 for latest features
+        uses: pnpm/action-setup@v3
         with:
-          version: 8.12.0 # Match pnpm-lock.yaml version
+          version: 8.12.0
 
       - name: Get pnpm store directory
         shell: bash
@@ -36,12 +36,17 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
-        uses: actions/cache@v4 # Update to v4 for better caching
+        uses: actions/cache@v4
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Configure .npmrc for publishing
+        run: |
+          echo "@queryon:registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
