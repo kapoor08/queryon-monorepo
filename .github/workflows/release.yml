@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+# Add workflow-level permissions
+permissions:
+  contents: write # Allows pushing to branches
+  pull-requests: write # Allows creating and updating PRs
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
@@ -18,12 +23,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20 # Upgrade to Node.js 20 for compatibility
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3 # Update to v3 for latest features
         with:
-          version: 8
+          version: 8.12.0 # Match pnpm-lock.yaml version
 
       - name: Get pnpm store directory
         shell: bash
@@ -31,7 +36,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4 # Update to v4 for better caching
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
