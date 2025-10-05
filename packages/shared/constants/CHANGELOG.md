@@ -1,13 +1,7 @@
-# @queryon/ui
+# @queryon/constants
 
-## 0.2.1
+## 0.1.1
 
 ### Patch Changes
 
 - 21342f4: Updated package.json for all the repos and added npm token for each.
-
-## 0.2.0
-
-### Minor Changes
-
-- Initialized tailwindcss and shadcn
