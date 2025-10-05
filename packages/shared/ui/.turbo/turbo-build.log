@@ -1,0 +1,10 @@
+
+> @queryon/ui@0.2.0 build D:\portfolio_projects\queryon-chat-widget\packages\shared\ui
+> pnpm build:css && pnpm build:js
+
+
+> @queryon/ui@0.2.0 build:css D:\portfolio_projects\queryon-chat-widget\packages\shared\ui
+> tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify
+
+Specified input file ./src/styles.css does not exist.
+ ELIFECYCLE  Command failed with exit code 9.

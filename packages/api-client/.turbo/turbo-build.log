@@ -1,0 +1,24 @@
+
+> @queryon/api-client@0.1.0 build D:\portfolio_projects\queryon-chat-widget\packages\api-client
+> tsup
+
+▲ [WARNING] The condition "types" here will never be used as it comes after both "import" and "require" [package.json]
+
+    package.json:11:6:
+      11 │       "types": "./dist/index.d.ts"
+         ╵       ~~~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    package.json:9:6:
+      9 │       "import": "./dist/index.mjs",
+        ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    package.json:10:6:
+      10 │       "require": "./dist/index.js",
+         ╵       ~~~~~~~~~
+
+[31mCannot find src/index.ts[39m
+ ELIFECYCLE  Command failed with exit code 1.

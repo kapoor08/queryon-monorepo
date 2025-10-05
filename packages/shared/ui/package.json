@@ -27,15 +27,16 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup && npx tailwindcss -i ./src/index.css -o ./dist/output.css --minify",
+    "build": "pnpm build:css && pnpm build:js",
+    "build:js": "tsup",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
     "dev": "tsup --watch",
-    "clean": "rm -rf dist",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint src --ext .ts,.tsx",
-    "tailwind:build": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --minify"
+    "clean": "rm -rf dist"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -60,5 +61,10 @@
   },
   "publishConfig": {
     "@queryon:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kapoor08/queryon-monorepo.git",
+    "directory": "packages/shared/ui"
   }
 }

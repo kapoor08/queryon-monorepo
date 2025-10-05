@@ -1,0 +1,12 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@queryon/"],
+      "groupName": "queryon packages",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ]
+}

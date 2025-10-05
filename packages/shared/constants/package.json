@@ -12,7 +12,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -28,5 +30,10 @@
   },
   "publishConfig": {
     "@queryon:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kapoor08/queryon-monorepo.git",
+    "directory": "packages/shared/constants"
   }
 }
