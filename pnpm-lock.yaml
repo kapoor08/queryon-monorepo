@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.10.5
-        version: 20.19.19
+        version: 20.19.22
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -53,7 +53,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.19.19
-        version: 20.19.19
+        version: 20.19.22
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -189,7 +189,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.19.19
-        version: 20.19.19
+        version: 20.19.22
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -1758,8 +1758,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node@20.19.19:
-    resolution: {integrity: sha512-pb1Uqj5WJP7wrcbLU7Ru4QtA0+3kAXrkutGiD26wUKzSMgNNaPARTUDQmElUXp64kh3cWdou3Q0C7qwwxqSFmg==}
+  /@types/node@20.19.22:
+    resolution: {integrity: sha512-hRnu+5qggKDSyWHlnmThnUqg62l29Aj/6vcYgUaSFL9oc7DVjeWEQN3PRgdSc6F8d9QRMWkf36CLMch1Do/+RQ==}
     dependencies:
       undici-types: 6.21.0
     dev: true
